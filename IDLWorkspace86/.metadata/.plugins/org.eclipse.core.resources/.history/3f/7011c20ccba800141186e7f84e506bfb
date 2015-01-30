@@ -40,3 +40,10 @@ NotSnowy=fltarr(12,6794,2223)
   write_tiff,'F:\NoSnow4.tif', NotSnowy, /float, geotiff=geokeys
   end
  
+ ;from experimentation 
+  ;Jan1=read_tiff('F:\Snow\JanPart1.tif')
+  ;Jan2=read_tiff('F:\Snow\JanPart2.tif')
+  ;Jan1exp=rebin(reform(jan1,1,6794,2223),2,6794,2223)
+  ;Jan2exp=rebin(reform(jan2,1,6794,2223),2,6794,2223)
+  ;microtestalb=reform(testalb[1,*,*])
+  ;testalb1[1:2,Jan1exp lt .75] = 9999 ;not sure why this doesn't work
