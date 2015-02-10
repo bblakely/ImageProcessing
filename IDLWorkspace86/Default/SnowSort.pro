@@ -14,9 +14,9 @@ endfor
 
 Allsnow=[Bimonths[0], Bimonths[1], Bimonths[2], Bimonths[3], Bimonths[4], Bimonths[5]]
 
-write_tiff,'F:\AutoAllSnow', Allsnow, /float
+;write_tiff,'F:\AutoAllSnow', Allsnow, /float
 ;main part of procedure checking snow array and filtering out values that do not match the criterion
-albfile='F:\TwoYearAlbAvg\Albedo02to03avg.tif'
+albfile='F:\TenYearAvgAlbedo.tif'
 testalb=read_tiff(albfile ,GEOTIFF=geotiff_info)
 iopen, albfile , geotiff=geokeys
 
@@ -36,7 +36,7 @@ NotSnowy=fltarr(12,6794,2223)
 
   endfor
   endfor
-  write_tiff,'F:\Snow4.tif', Snowy, /float, geotiff=geokeys
-  write_tiff,'F:\NoSnow4.tif', NotSnowy, /float, geotiff=geokeys
+  write_tiff,'F:\Snow75.tif', Snowy, /float, geotiff=geokeys
+  write_tiff,'F:\NoSnow75.tif', NotSnowy, /float, geotiff=geokeys
   end
  
