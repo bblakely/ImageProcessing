@@ -35,7 +35,6 @@ for i= 0, n_elements(AllLCyears)-1 do begin
   if freq lt (n_elements(pixel)/1.25) then Majority[index] =9999 else Majority[index] = MCV
   pixel=[]
 endforeach 
-end
 
 write_tiff, 'F:/Majority80LC.tif',Majority, /FLOAT
 

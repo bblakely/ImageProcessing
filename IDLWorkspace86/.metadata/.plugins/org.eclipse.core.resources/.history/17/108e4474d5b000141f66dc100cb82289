@@ -29,21 +29,14 @@ NotSnowy=fltarr(12,6794,2223)
       
       for k = 0, 12-1 do begin
       
-      if Allsnow[k,i,j] ge 0.75 then Snowy[k,i,j]=testalb[k,i,j] else Snowy[k,i,j]= 9999
-      if Allsnow[k,i,j] ge 0 and Allsnow[k,i,j] lt 0.75 then NotSnowy[k,i,j] = testalb[k,i,j] else NotSnowy[k,i,j]=9999
+      if Allsnow[k,i,j] ge 0.50 then Snowy[k,i,j]=testalb[k,i,j] else Snowy[k,i,j]= 9999
+      if Allsnow[k,i,j] ge 0 and Allsnow[k,i,j] lt 0.50 then NotSnowy[k,i,j] = testalb[k,i,j] else NotSnowy[k,i,j]=9999
       
       endfor
 
   endfor
   endfor
-  write_tiff,'F:\Snow4.tif', Snowy, /float, geotiff=geokeys
-  write_tiff,'F:\NoSnow4.tif', NotSnowy, /float, geotiff=geokeys
+  write_tiff,'F:\Snow50.tif', Snowy, /float, geotiff=geokeys
+  write_tiff,'F:\NoSnow50.tif', NotSnowy, /float, geotiff=geokeys
   end
  
- ;from experimentation 
-  ;Jan1=read_tiff('F:\Snow\JanPart1.tif')
-  ;Jan2=read_tiff('F:\Snow\JanPart2.tif')
-  ;Jan1exp=rebin(reform(jan1,1,6794,2223),2,6794,2223)
-  ;Jan2exp=rebin(reform(jan2,1,6794,2223),2,6794,2223)
-  ;microtestalb=reform(testalb[1,*,*])
-  ;testalb1[1:2,Jan1exp lt .75] = 9999 ;not sure why this doesn't work

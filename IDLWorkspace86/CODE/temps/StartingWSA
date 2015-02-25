@@ -1,0 +1,8 @@
+manyalb= file_search('F:\RawData\Albedo\WSAs\*2011*.tif)
+
+;agreement10yr
+;crops=0.635
+;mosaic=0.418
+;decid=0.264
+;mixed=0.243
+;evgreen=0.285
